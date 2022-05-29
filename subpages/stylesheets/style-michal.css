@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Open+Sans:wght@400;600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}git 
+fieldset {
+  border: none;
+}
+.ads {
+  height: 300px;
+}
+.ads img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.close-box {
+  width: 24px;
+  height: auto;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+#icon-wrapper {
+  float: right;
+}
+#icon-wrapper a {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  max-width: 1600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+
+.item-container,
+.container-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 0;
+}
+
+article {
+  background-color: #f2efeb;
+  margin: 1rem 0.5rem;
+}
+
+.popup-window {
+  padding: 1.9rem 0.8rem 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  background-color: #ffff;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.popup-window--background {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.609);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.shown {
+  display: flex;
+  flex-direction: column;
+}
+.popup-window form label {
+  margin-top: 1rem;
+}
+h1 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-top: 2px solid #fff;
+  text-align: center;
+  padding: 5px 0;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom: 2px solid #000000;
+  border-top: 2px solid #000000;
+  text-align: center;
+  padding: 5px 0;
+}
+
+h3 {
+  padding-top: 0.5rem;
+}
+
+.not-a-member {
+  text-align: center;
+}
+
+
+
+.page-breadcrumbs {
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+}
+
+.one-recipe {
+  background: transparent;
+}
+
+.meal-photo {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+.ad {
+  max-height: 300px;
+}
+
+.ad-photo {
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.border-container {
+  padding: 1rem;
+  border: 2px solid #fff;
+  max-width: 400px;
+  max-height: 200px;
+  margin: 0 1rem;
+}
+
+.recipe-details-wrapper {
+  max-width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 0.2rem 0;
+}
+
+.recipe-details-container {
+  padding: 1rem;
+  background-color: #f2efeb;
+}
+
+.details-container {
+  padding: 0.7rem;
+}
+.details-container p {
+  font-size: 0.9rem;
+}
+
+.details-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  align-self: center;
+}
+
+.details-title2 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  align-self: center;
+}
+
+.details-text {
+  font-weight: 600;
+}
+
+.details-box-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  text-align: center;
+  margin: 1.5rem 0 0 0;
+  border-top: 2px solid #fff;
+}
+.details-box-container p {
+  border-right: 2px solid #fff;
+  padding: 1rem 0;
+}
+.details-box-container p:last-of-type {
+  border: 0px;
+}
+.details-box-container span {
+  display: block;
+}
+
+.recipe-details-button {
+  width: 100%;
+  padding: 1rem 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #2a2a2a;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+i {
+  height: 15px;
+  width: 15px;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.one-item {
+  display: inline;
+}
+
+.checkbox-wrapper {
+  padding: 0.5rem 0;
+}
+
+#signup-subpage {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+#signup-wrapper {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../photos/signup.jpg");
+  background-size: cover;
+  margin: 0;
+}
+#signup-wrapper h1 {
+  color: #000;
+  border: none;
+}
+#signup-wrapper #form-wrapper {
+  /* background-color: transparent; */
+  margin: 0 auto;
+  position: relative;
+  padding: 15px 20px 20px;
+  border-radius: 20px;
+  max-width: 300px;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+}
+#signup-wrapper input,
+.reset-password_input {
+  display: block;
+  margin: 0 0 1rem 0;
+  width: 100%;
+  padding: 0.5rem;
+  font-family: "Open Sans", sans-serif;
+}
+#signup-wrapper input:nth-child(4) {
+  margin-bottom: 0;
+}
+#signup-wrapper button,
+.reset-password_btn {
+  width: 95%;
+  margin: 1.2rem auto 0;
+  padding: 1rem 0;
+  margin-top: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  background-color: #a5d145;
+  font-weight: 600;
+}
+#signup-wrapper .log-in {
+  color: #000;
+  font-weight: 600;
+  /* text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000,
+    -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000,
+    -2px 0px 0 #000000, 0px -2px 0 #000000, 0px 0px 10px rgba(0, 0, 0, 0); */
+}
+
+#settings-headings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.3rem;
+}
+#settings-headings a {
+  display: block;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-top: 1px solid #000000;
+  text-align: center;
+  padding: 5px 0;
+  margin: 0 1rem;
+}
+#settings-headings a:last-of-type {
+  border-bottom: 2px solid #000000;
+}
+
+.settings {
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+}
+.settings input {
+  display: block;
+  margin: 0.5rem auto;
+  width: 100%;
+  padding: 0.5rem;
+  font-family: "Open Sans", sans-serif;
+}
+.settings button {
+  width: 100%;
+  padding: 1rem 0;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  background-color: #a5d145;
+  font-weight: 600;
+}
+.settings form {
+  max-width: 400px;
+  margin: auto;
+}
+
+form {
+  display: contents;
+}
+.li-item {
+  display: none;
+}
+
+
+@media screen and (min-width: 720px) {
+  #home-page main,
+  #fav-page main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+  .recipe-subpage main {
+    display: grid;
+    grid-template-columns: 30% 68%;
+    margin-top: 5rem;
+    justify-content: space-between;
+  }
+  .li-item {
+    display: flex;
+  }
+
+
+  /* label {
+    color: #fff;
+  } */
+
+    float: none;
+    display: inline;
+  }
+
+ 
+  #settings-wrapper {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+
+@media screen and (min-width: 1048px) {
+  #signup-subpage {
+    max-height: 100vh;
+  }
+
+  #signup-wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background: transparent;
+  }
+  #signup-wrapper h1 {
+    color: #000000;
+  }
+  #signup-wrapper #image-wrapper {
+    background-image: url("../photos/signup.jpg");
+    background-size: cover;
+    margin: 0;
+  }
+  #signup-wrapper #form-wrapper {
+    max-width: 450px;
+    width: 40%;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  #signup-wrapper .log-in {
+    text-shadow: none;
+    color: black;
+  }
+
+}
+@media screen and (min-width: 1320px) {
+
+
+  #settings-subpage footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
